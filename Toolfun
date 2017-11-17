@@ -1,0 +1,260 @@
+/*
+* @Author: LHL
+* @Date:   2017-11-17 10:36:46
+* @Last Modified by:   LHL
+* @Last Modified time: 2017-11-17 10:46:25
+*/
+//
+// 集合个人封装所有常用的工具函数；
+//
+'use strict';
+
+//创建元素并插入到body最下面
+function createEle(ele,content,attrobj){
+    var oDiv = document.createElement(ele);
+        for (var key in attr){
+            oDiv.setAttribute(key, attr[key]);
+        }
+        oDiv.innerHTML = content;
+    document.getElementsByTagName('body')[0].appendChild(oDiv);
+}
+
+
+//监听器兼容
+var addEvent = function(ele, type, callback){
+    if(ele.addEventListener){
+        ele.addEventListener(type, callback, false);
+    }else if(ele.attachEvent){
+        ele.attachEvent('on'+type, callback);
+    }
+}
+
+function getId(id){             //获取id元素
+    return document.getElementById(id);
+}
+function getClass(c){           //获取类名元素
+    return document.getElementsByClassName(c);
+}
+function getTagname(tagname){   //获取标签名元素
+    return document.getElementsByTagName(tagname);
+}
+function getDivheight(ele){  //获取元素真实高度
+    return parseInt(ele.offsetHeight);
+}
+function getDivWidth(ele){  //获取元素真实宽度
+    return parseInt(ele.offsetWidth);
+}
+
+//判断元素是否隐藏
+function isHidden(el) {
+    var style = window.getComputedStyle(el);
+    return (style.display === 'none')
+}
+
+// 给元素添加类名
+function addClass(ele,c){
+    var cname = ele.getAttribute('class');
+    if(!cname){
+        ele.setAttribute('class',c);
+    }else {
+        if(cname.indexOf(c) == -1){
+            ele.setAttribute('class',cname+' '+c);
+        }
+    }
+}
+
+//给元素删除类名
+function removeClass(ele,c){
+    var cname = ele.getAttribute('class');
+    var newclass = '';
+    if(!cname){
+        return;
+    }else {
+        if(cname.indexOf(c) > -1){
+            newclass = cname.replace(c,'').replace(/\s{2}/,' ');
+            ele.setAttribute('class', newclass);
+        }else{
+            return;
+        }
+    }
+}
+
+// 判断是否已经含有此类名
+function hasClass(ele,c){
+    var istrue = '';
+    var cname = ele.getAttribute('class');
+    if(!cname){
+        istrue = false;
+    }else {
+        if(cname.indexOf(c) == -1){
+            istrue = false;
+        }else{
+            istrue = true;
+        }
+    }
+    return istrue;
+}
+
+//去掉字符串前后的空格
+function trim(str){
+    return str.replace(/^(\s|\u00A0)+/,'').replace(/(\s|\u00A0)+$/,'');
+}
+
+//封装一个each遍历函数,可遍历数组和对象
+function each(object, callback, args){
+    var name,i = 0,length = object.length,
+    isObj = length === undefined || Object.prototype.toString.call(object).indexOf('Function')>-1;
+    if (args) {
+        if (isObj) {
+            for (var name in object) {
+                if (callback.apply(object[name], args) === false) {
+                    break;
+                }
+            }
+        }else {
+            for (; i < length;) {
+                if (callback.apply(object[i++], args) === false) {
+                    break;
+                }
+            }
+        }
+    }else {
+        if (isObj) {
+            for (var name in object) {
+                if (callback.call(object[name], name, object[name]) === false) {
+                    break;
+                }
+            }
+        }else {
+            for (var value = object[0]; i < length && callback.call(value, i, value) !== false; value = object[++i]) {
+            }
+        }
+    }
+    return object;
+}
+
+
+
+// 获取当前时间；
+function getCurTime(){
+    var h = new Date().getHours()+'';
+    var m = new Date().getMinutes()+'';
+    var s = new Date().getSeconds()+'';
+    if (h.length==1) {
+        h = '0' + h ;
+    };
+    if (m.length==1) {
+        m = '0' + m ;
+    };
+    if (s.length==1) {
+        s = '0' + s ;
+    };
+
+    return h+':'+m+':'+s;
+}
+
+
+
+// 封装ajax
+function convertData(data){
+    if( typeof data === 'object' ){
+        var convertResult = "" ;
+        for(var c in data){
+          convertResult += c + "=" + data[c] + "&";
+        }
+        convertResult = convertResult.substring(0,convertResult.length-1);
+        return convertResult;
+    }else{
+        return data;
+    }
+}
+function createxmlHttpRequest() {
+    if (window.ActiveXObject) {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    } else if (window.XMLHttpRequest) {
+        return new XMLHttpRequest();
+    }
+}
+function ajax(){
+  var ajaxData = {
+        type:arguments[0].type || "GET",
+        url:arguments[0].url || "",
+        async:arguments[0].async || "true",
+        data:arguments[0].data || null,
+        dataType:arguments[0].dataType || "text",
+        contentType:arguments[0].contentType || "application/x-www-form-urlencoded",
+        beforeSend:arguments[0].beforeSend || function(){},
+        success:arguments[0].success || function(){},
+        error:arguments[0].error || function(){}
+      }
+
+    ajaxData.beforeSend()
+
+    var xhr = createxmlHttpRequest();
+
+    xhr.responseType=ajaxData.dataType;
+
+    if(ajaxData.type == 'get'){
+        ajaxData.url += '?' + convertData(ajaxData.data);
+    }
+
+    xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);
+    xhr.setRequestHeader("Content-Type",ajaxData.contentType);
+    xhr.send(convertData(ajaxData.data));
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            if(xhr.status == 200){
+                ajaxData.success(xhr.response)
+            }else{
+                ajaxData.error()
+            }
+        }
+    }
+}
+
+
+
+    //判断浏览器当前页面是否显示；
+    function getHiddenProp()
+    {
+        var prefixes = ['webkit','moz','ms','o'];
+        if ('hidden' in document) return 'hidden';
+
+        for (var i = 0; i < prefixes.length; i++)
+        {
+            if ((prefixes[i] + 'Hidden') in document)
+                return prefixes[i] + 'Hidden';
+        }
+        return null;
+    }
+
+    function getVisibilityState(){
+        var prefixes = ['webkit', 'moz', 'ms', 'o'];
+        if ('visibilityState' in document) return 'visibilityState';
+        for (var i = 0; i < prefixes.length; i++)
+        {
+            if ((prefixes[i] + 'VisibilityState') in document)
+                return prefixes[i] + 'VisibilityState';
+        }
+        return null;
+    }
+
+    function isHidden(){
+        var prop = getHiddenProp();
+        if (!prop) return false;
+
+        return document[prop];
+    }
+
+    var visProp = getHiddenProp();
+    if (visProp){
+        var evtname = visProp.replace(/[H|h]idden/, '') + 'visibilitychange';
+        document.addEventListener(evtname, function (){
+            if (document[getVisibilityState()]=='hidden') {
+                //不显示
+            }else{
+                //显示
+            }
+        }, false);
+    }
