@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>About-sangong</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="responsive.css">
+	<!--[if lt IE 9]>
+	         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1 style="display: none;"><a href="http://www.qingchengshanxia.com/">san gong</a></h1>
+			<div class="myhead">
+				<a href="index.html">
+					<img src="images/headimg.jpg" alt="我的头像">
+				</a>
+				<div>
+					<h2>青城山下</h2>
+					<p>初级前端工程师</p>
+				</div>
+			</div>
+			<nav class="headnav">
+				<ul class="navshow">
+					<li><a href="about.html">about</a><span>·</span></li>
+					<li><a href="profile.html">profile</a><span>·</span></li>
+					<li><a href="demo.html">demo</a><span>·</span></li>
+					<li><a href="note.html">note</a><span>·</span></li>
+					<li><a href="code.html">code</a><span>·</span></li>
+					<li><a href="links.html">links</a><span>·</span></li>
+					<li><a href="chat.html">chat</a><span>·</span></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</nav>
+			<div class="navhide" id="navhide">
+				<div>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="navhide-sub">
+					<li><a href="about.html">about</a></li>
+					<li><a href="profile.html">profile</a></li>
+					<li><a href="demo.html">demo</a></li>
+					<li><a href="note.html">note</a></li>
+					<li><a href="code.html">code</a></li>
+					<li><a href="links.html">links</a></li>
+					<li><a href="chat.html">chat</a></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="skill">
+			<div class="container">
+				<h2>About → <a href="profile.html" class="pro-tip">想了解更多？看我完整简历！</a></h2>
+				<div class="skill-sub" id="skill-sub">
+					<h3>熟练前端,略懂后端</h3>
+					<p>25岁之前，我不知道什么叫前端？26岁之前，我以为前端就是切页面的！现在，我知道，其实前端也可以是一种品位，一种眼界，一种生活格调！</p>
+					<ul>
+						<li>
+							<h4>HTML & CSS</h4>
+							<ul>
+								<li>了解html5新标签语义化,能使用离线缓存、canvas、audio等新特性;</li>
+								<li>能熟练运用css3酷炫的@keyframe、transform、transition、gradient、flex等属性;</li>
+								<li>对html结构的布局、响应式开发比较熟悉;</li>
+								<li>能做到基本兼容IE8;</li>
+								<li>能使用firebug调试;</li>
+								<li>熟练使用sass、sublime等工具;</li>
+							</ul>
+						</li>
+						<li>
+							<h4>Javascript</h4>
+							<ul>
+								<li>熟悉原生javascript，基本能做到脱离jq编写常见效果;</li>
+								<li>能简单运用面向对象方式编程;</li>
+								<li>会用正则表达式;</li>
+								<li>熟悉Ajax获取数据;</li>
+								<li>懂得基本的js代码性能优化</li>
+							</ul>
+						</li>
+						<li>
+							<h4>jQuery & Bootstrap</h4>
+							<ul>
+								<li>能快速的使用jq写常见效果，写小插件;</li>
+								<li>能用bootstrap快速的写常见的企业站、后台，能修改模板;</li>
+								<li>能拓展插件;</li>
+							</ul>
+						</li>
+						<li>
+							<h4>PHP & MYSQL</h4>
+							<ul>
+								<li>能写一些简单的后台程序，实现与ajax相互;</li>
+								<li>能简单的对mysql进行增删查改;</li>
+							</ul>
+						</li>
+						<li>
+							<h4>Photoshop</h4>
+							<ul>
+								<li>能精细的切图;</li>
+								<li>能进行简单的图片处理;</li>
+								<li>能优化图片大小，合成雪碧图;</li>
+							</ul>
+						</li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		<div class="gold">
+			<div class="container">
+				<div class="gold-sub">
+					<h3>熟练前端,略懂后端</h3>
+					<p>我没有华丽的履历，没有牛逼的足迹，在人生孤独的弯路上，只有一步步坚实的脚印和不断前进的坚韧信念.</p>
+				</div>
+			</div>
+		</div>
+		<div class="experience">
+			
+		</div>
+		<div class="demo">
+			
+		</div>
+		<div class="honest">
+			<div class="container">
+				<h4>我愿意用我的诚心打动你，你，是否愿意用一份工作来接纳我？</h4>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			
+		</div>
+	</footer>
+	<script src="../../scripts/jquery-3.1.1.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+		$(function(){
+			$('#skill-sub li').each(function(){
+				$(this).addClass('skill-progress');
+			})
+		})
+	</script>
+</body>
+</html>

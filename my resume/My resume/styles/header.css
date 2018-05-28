@@ -1,0 +1,318 @@
+html{
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+}
+body{
+	background: white;
+	font-size: 1em;
+	font-family: sans-serif,arial,helvetica, 微软雅黑, 'microsoft yahei', Verdana, Lucida, 黑体;
+}
+::-webkit-scrollbar{width:16px;}
+::-webkit-scrollbar-track{background-color:#bee1eb;}
+::-webkit-scrollbar-thumb{background-color:#9c3;}
+::-webkit-scrollbar-thumb:hover {background-color:#9c3}
+::-webkit-scrollbar-thumb:active {background-color:rgba(255,222,173,1)}
+img{
+	width: auto; 
+	max-width: 100%;
+	-ms-interpolation-mode: bicubic;  /*windows平台缩放图片时，可能出现图像失真现象,针对IE浏览器内核*/
+}
+/*header开始*/
+	.header{
+		width:100%;
+		height: 0;
+		overflow: hidden;
+		background-color: rgba(96,96,96,.6);
+		position: fixed;
+		top:0;
+		left:0;
+		z-index: 9999999;
+		transition: margin-top 0.3s linear;
+	}
+	.header .nav{
+		margin: 0 auto;
+		width: 960px;  
+		height: 100%;  
+	}
+	.on{
+		margin-top: -80px;
+	}
+	/*logo开始*/
+		.header .nav .logo{
+			float: left;
+			height: 80px;
+			width: 160px; 
+		}
+		.header .nav .logo .image{
+			width:70px;  
+			float: left;
+			overflow: hidden;
+		}
+		.header .nav .logo .image img{
+			width: 60px;		
+			height: 60px;		
+			border-radius: 50%;
+			border: solid 2px white;
+			margin-top: 10px; 
+			transition: all 1s ease;
+			cursor: pointer;
+		}
+		.header .nav .logo .image img:hover{
+			-webkit-transform:rotate(360deg);
+			-ms-transform:rotate(360deg);
+			-moz-transform:rotate(360deg);
+			-o-transform:rotate(360deg);
+			transform:rotate(360deg);
+		}
+		.header .nav .logo .discription{
+			float: left;
+			overflow: hidden;
+			height:80px; 			
+			line-height: 80px;		
+			width: 90px;			
+		}
+		.header .nav .logo .discription p{
+			width: 180px;	
+			height: 40px;	
+			position: relative;
+			left:0;
+			-webkit-transition: all .5s linear;
+			-moz-transition: all .5s linear;
+			-o-transition: all .5s linear;
+			transition: all .5s linear;
+		}
+		.header .nav .logo .discription:hover p{
+			left:-90px;
+		}
+		.header .nav .logo .discription p a{
+			display: inline-block;
+			height: 40px;		  
+			line-height: 40px;    
+			width: 90px;			  
+			text-align: center;
+			font-weight: bold;
+			font-size: 0.875em;
+			color: white;
+			position: relative;
+			top: -20px;			
+		}
+		.header .nav .logo .discription p:nth-child(1){
+			border-bottom: solid 2px white;
+		}
+		/*logo结束*/
+
+		/*nav开始*/
+		.header .nav>ul{
+			float: right;
+			height: 100%;
+		}
+		.header .nav>ul>li{
+			float: left;
+		}
+		.header .nav>ul>li>a{
+			display: block;
+			color: white;
+			font-size: 16px;
+			height: 80px;
+			line-height: 80px;
+			padding-left:20px;
+			padding-right: 20px; 
+		}
+		.header .nav>ul>li>a:hover{
+			background-color: rgba(246,192,107,0.6);
+		}
+			
+			/*'兴趣'下拉开始*/
+			.header .nav>ul>li.tab{
+				position: relative;
+			}
+			.header .nav>ul>li.tab .tablist{
+				position: absolute;
+				top: 80px;
+				left:0;
+				overflow: hidden;
+				display: none;
+			}
+			.header .nav>ul>li.tab .tablist li{
+				display: block;
+				float: left;
+				overflow: hidden;
+				width: 100%;
+				background-color:gray;
+				outline: none;
+			}
+			.header .nav>ul>li.tab .tablist li a{
+				display: block;
+				width: 100%;
+				text-align: center;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				color: white;
+				font-size: 1em;
+			}
+			.header .nav>ul>li.tab .tablist li a:hover{
+				background:rgba(246,192,107,0.8);
+			}
+			.header .nav>ul>li.tab .tablist a>i{
+				display: inline-block;
+				width: 25px;
+				height: 18px;
+			}
+			.header .nav>ul>li.tab .tablist a .tablist_one{
+				background: url("../images/read.png") no-repeat 0px 3px;
+			}
+			.header .nav>ul>li.tab .tablist a .tablist_two{
+				background: url("../images/game.png") no-repeat -2px 3px;
+			}
+			.header .nav>ul>li.tab .tablist a .tablist_three{
+				background: url("../images/sport.png") no-repeat 0px 3px;
+			}
+			.header .nav>ul>li.tab .tablist a .tablist_four{
+				background: url("../images/films.png") no-repeat 0px 2px;
+			}
+			/* '兴趣'下拉结束*/
+
+			/*箭头符号开始*/
+			.header .nav>ul>li.tab .arrow{
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				background: url("../images/arrow.png") no-repeat;
+				margin-left: 3px;
+				margin-top: 1px;
+				-webkit-transition: transform 0.3s ease;
+				-moz-transition: transform 0.3s ease;
+				-o-transition: transform 0.3s ease;
+				transition: transform 0.3s ease;
+			}
+			.header .nav>ul>li.tab:hover .arrow{
+				-webkit-transform: rotate(180deg);
+			}
+			/*箭头符号结束*/
+		
+			/*联系方式开始*/
+			.header .nav>ul>li:nth-child(5){
+				position: relative;
+				overflow: hidden;
+			}
+			.header .nav>ul>li:nth-child(5)>a{
+				cursor: text;
+			}
+			.header .nav>ul>li:nth-child(5)>ul{
+				position: absolute;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				transition: all 0.8s linear;
+				width: 230px;
+				height: 500px;
+			}
+			.header .nav>ul>li:nth-child(5):hover{
+				overflow: visible;
+			}
+			.header .nav>ul>li:nth-child(5):hover ul{
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			.header .nav>ul>li:nth-child(5)>ul>li:last-child{
+				margin-top: 10px;
+			}
+			/*联系方式结束*/
+
+	/*nav结束*/
+
+
+	/*回到index页面开始、回到community开始*/
+	aside.to_index,aside.to_community{
+		position: fixed;
+		top: 0;
+		height: 80px;
+		text-align: center;
+	}
+	aside.to_index{
+		left: 5%;
+	}
+	aside.to_community{
+		right: 5%;
+	}
+	@-webkit-keyframes toindex{
+		0%{-webkit-transform:rotate(0deg);}
+		10%{-webkit-transform:rotate(40deg);}
+		20%{-webkit-transform:rotate(-35deg);}
+		30%{-webkit-transform:rotate(30deg);}
+		40%{-webkit-transform:rotate(-25deg);}
+		50%{-webkit-transform:rotate(20deg);}
+		60%{-webkit-transform:rotate(-15deg);}	
+		70%{-webkit-transform:rotate(12deg);}
+		80%{-webkit-transform:rotate(-8deg);}
+		90%{-webkit-transform:rotate(4deg);}
+		100%{-webkit-transform:rotate(0deg);}
+	}
+	@-moz-keyframes toindex{
+		0%{-moz-transform:rotate(0deg);}
+		10%{-moz-transform:rotate(40deg);}
+		20%{-moz-transform:rotate(-35deg);}
+		30%{-moz-transform:rotate(30deg);}
+		40%{-moz-transform:rotate(-25deg);}
+		50%{-moz-transform:rotate(20deg);}
+		60%{-moz-transform:rotate(-15deg);}	
+		70%{-moz-transform:rotate(12deg);}
+		80%{-moz-transform:rotate(-8deg);}
+		90%{-moz-transform:rotate(4deg);}
+		100%{-moz-transform:rotate(0deg);}
+	}
+	@keyframes toindex{
+		0%{transform:rotate(0deg);}
+		10%{transform:rotate(40deg);}
+		20%{transform:rotate(-35deg);}
+		30%{transform:rotate(30deg);}
+		40%{transform:rotate(-25deg);}
+		50%{transform:rotate(20deg);}
+		60%{transform:rotate(-15deg);}	
+		70%{transform:rotate(12deg);}
+		80%{transform:rotate(-8deg);}
+		90%{transform:rotate(4deg);}
+		100%{transform:rotate(0deg);}
+	}
+	aside.to_index>p,aside.to_community>p{
+		overflow: hidden;
+		-webkit-animation: toindex ease-in-out 8s infinite;
+		-moz-animation: toindex ease-in-out 8s infinite;
+		animation: toindex ease-in-out 8s infinite;
+		-webkit-transform-origin:50% 0;
+		-moz-transform-origin:50% 0;
+		transform-origin:50% 0;
+	}
+	aside.to_index>p>span,aside.to_community>p>span{
+		display: block;
+		width:1px;
+		margin:0 auto; 
+		background-color: orange;
+		height: 36px;
+	}
+	aside.to_index>p>a,aside.to_community>p>a{
+		font-size: 13px;
+		display: block;
+		width: 85px;
+		height: 50px;
+		line-height: 34px;
+		color:white;
+		font-weight: bold;
+		margin-top: -10px;
+	}
+	aside.to_index>p>a{
+		background: url('../images/toindex.png') no-repeat 0 0;
+		padding-top: 5px;
+	}
+	aside.to_community>p>a{
+		background: url('../images/tocommunity.png') no-repeat 0 0;
+		margin-top: -15px;
+		padding-top: 8px;
+	}
+	aside.to_index>p:hover,aside.to_community>p:hover{
+		-webkit-animation-play-state: paused;
+		-moz-animation-play-state: paused;
+		animation-play-state: paused;
+	}
+	/*回到index页面开始、回到community开始*/
+	
+/*header结束*/

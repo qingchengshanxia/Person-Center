@@ -1,0 +1,356 @@
+body{
+	font-family: 'Microsoft YaHei','simsun';
+	height: 100%;
+	overflow-y:scroll; 
+}
+
+	/*header开始*/
+	.header{
+		background: #fff;
+	    overflow: hidden;
+	    height: 70px;
+	    width: 100%;
+	}
+	.header>div{
+		width: 1000px;
+		margin: 0 auto;
+		/*background: green;*/
+		overflow: hidden;
+	}
+	.header>div>a,.header>div>span{
+		float: left;
+	}
+	.header>div>a{
+		width: 215px;
+	    height: 70px;
+	    background-position: 0 0;
+	    display: block;
+	    cursor: default;
+	    color: #333;
+	}
+	img{
+		border:0;
+		color: transparent;
+		font-size: 0;
+	}
+	.header>div>span{
+		display: block;
+	    width: 148px;
+	    height: 68px;
+	    background-position: 0 0;
+	    float: left;
+	}
+		/*header右边开始*/
+		.header>div>div{
+			float: right;
+			width: 584px;
+			margin: 20px 0 0 0;
+			position: relative;
+		}	
+		.header>div>div>form>input,.header>div>div>form>button,.header>div>div>form>p,
+		.header>div>div>form>a{
+			float: left;
+		}
+		.header>div>div>form>span{
+			color: #aaa;
+		    position: absolute;
+		    top: 5px;
+		    left: 162px;
+		    z-index: 10;
+		    font-size: 12px;
+		    font-family: simsun;
+		}
+		.header>div>div>form>input{
+			display: block;
+			font: 12px/1.5 tahoma,arial;
+			width: 120px;
+		    height: 23px;
+		    line-height: 23px;
+		    padding: 0 4px 0 10px;
+		    border: 1px #d9d9d9 solid;
+		    color: #aaa;
+		    margin: 0 0 0 8px;
+		    _display: inline;
+		    outline: none;
+		}
+		.header>div>div>form>input:focus{
+			border: 1px #FFD7EA solid;
+		}
+		.header>div>div>form>button{
+			width: 67px;
+			height: 25px;
+			border: 0;
+			margin: 0 0 0 8px;
+			outline: none;
+			cursor: pointer;
+			_display: inline;
+			background:url("images/top/sprite.png") no-repeat -816px -188px;
+		}
+		.header>div>div>form>p{
+			display: inline;
+		    height: 25px;
+		    line-height: 25px;
+		    margin-left: 20px;
+		}
+		.header>div>div>form>p>span{
+			vertical-align: middle;
+		    display: inline-block;
+		    color: #aaa;
+		    font-size: 12px;
+		}
+		.header>div>div>form>p>span,.header>div>div>form>p>a{
+			float: left;
+		}
+		.header>div>div>form>p>a{
+			display: inline-block;
+			font-size: 0;
+		    line-height: normal;
+		    margin-left: 5px;
+		    width: 16px;
+		    height: 16px;
+		    margin-top: 5px;
+		    vertical-align: middle;
+		    background: url('images/top/small-icon.png') no-repeat;
+		}
+		.header>div>div>form>p>a.small-icon-one{
+			background-position: 0 0;
+		}
+		.header>div>div>form>p>a.small-icon-one:hover{
+			background-position: 0 -16px;
+		}
+		.header>div>div>form>p>a.small-icon-two{
+			background-position: -16px 0;
+		}
+		.header>div>div>form>p>a.small-icon-two:hover{
+			background-position: -16px -16px;
+		}
+		.header>div>div>form>p>a.small-icon-three{
+			background-position: -32px 0;
+		}
+		.header>div>div>form>p>a.small-icon-three:hover{
+			background-position: -32px -16px;
+		}
+		.header>div>div>form>p>a.small-icon-four{
+			opacity: 0.8;
+			filter: alpha(opacity=80);
+			background: url('images/top/wx.jpg') no-repeat 0 0;
+		}
+		.header>div>div>form>p>a.small-icon-four:hover{
+			opacity: 1;
+			filter: alpha(opacity=100);
+		}
+		.header>div>div>form>a{
+			margin: 3px 0 0 18px;
+			color: #aaa;
+			font-size: 12px;
+		}
+		.header>div>div>form>a:hover{
+			text-decoration: underline;
+		}
+		/*header右边结束*/
+	/*header结束*/
+
+	/*user-reg开始*/
+	.user-reg{
+		width: 100%;
+		height: 450px;
+		background: #edebe7 url('images/big_bg.jpg') no-repeat center top;
+		position: relative;
+	}
+	.user-reg>div{
+		width: 1000px;
+		margin:0 auto;
+	}
+	.user-reg>div>div{
+		width: 398px;
+		margin: 35px 0 0 0;
+		float: left;
+		position: relative;
+		z-index: 2;
+	}
+	.user-reg>div>div>div{
+		width: 398px;
+	    height: 380px;
+	    background: #fff;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    z-index: 1;
+	    opacity: .8;
+	    filter: alpha(opacity=80);
+	}
+	.user-reg>div>div>form>div{
+		width: 100%;
+		font-size: 14px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 99;
+	}
+	.user-reg>div>div>form>div>h2{
+		font-family: 'Microsoft YaHei';
+		font-size: 18px;
+		text-align: center;
+		padding: 15px 0 10px 0;
+		margin: 0 10px;
+		border-bottom: 1px #f4f3f3 solid;
+		font-weight: 400;
+		color: #8e8e8e;
+	}
+	.user-reg>div>div>form>div>dl{
+		margin-top: 20px;
+		clear: both;
+		color: #666;
+		overflow: hidden;
+	}
+	.user-reg>div>div>form>div>dl>dt,.user-reg>div>div>form>div>dl>dd{
+		float: left;
+	}
+	.user-reg>div>div>form>div>dl>dt{
+		width: 70px;
+		height: 33px;
+		text-align: right;
+		line-height: 33px;
+		padding: 0 6px;
+		display: inline-block;
+	}
+	.user-reg>div>div>form>div>dl>dd{
+		width: 272px;
+		height: 32px;
+		line-height: 32px;
+		margin-left: 10px;
+		display: inline;
+	}
+		/*sex开始*/
+		.user-reg>div>div>form>div>dl.reg-sex dd>input{
+			float: left;
+			margin-top: 9px;
+		}
+		.user-reg>div>div>form>div>dl.reg-sex dd>label{
+			float: left;
+			padding-left: 25px;
+		    height: 32px;
+		    width: 15px;
+		    display: inline;
+		    background: url('images/top/sex.jpg') no-repeat;
+		}
+		.user-reg>div>div>form>div>dl.reg-sex dd>label.sex_m{
+			background-position:4px 6px; 
+		}
+		.user-reg>div>div>form>div>dl.reg-sex dd>label.sex_w{
+			background-position:5px -26px; 
+		}
+		/*sex结束*/
+
+		/*birthday开始*/
+		.user-reg>div>div>form>div>dl.reg-birthday>dd>div{
+			float: left;
+			width: 84px;
+			height: 30px;
+			position: relative;
+			z-index: 1;
+			border: 1px #d9d9d9 solid;
+			margin-right: 7px;
+		}
+		.user-reg>div>div>form>div>dl.reg-birthday>dd>div.r-b-three{
+			margin-right: 0;
+		}
+		.user-reg>div>div>form>div>dl.reg-birthday>dd>div>div{
+			position: absolute;
+			top: 0;
+			right: 0;
+			line-height: 32px;
+			width: 30px;
+			text-align: center;
+		}
+		.user-reg>div>div>form>div>dl.reg-birthday>dd>div>input{
+			cursor: pointer;
+			outline: none;
+			width: 56px;
+			border: none;
+			text-align: center;
+			height: 20px;
+			line-height: 20px;
+			color: #333;
+			font-size: 12px;
+		}
+		/*birthday结束*/
+
+		/*area开始*/
+		.user-reg>div>div>form>div>dl.reg-area>dd>div{
+			position: relative;
+			z-index: 1;
+			width: 272px;
+			height: 30px;
+			border: 1px #d9d9d9 solid;
+		}
+		.user-reg>div>div>form>div>dl.reg-area>dd>div>input{
+			display: block;
+			cursor: pointer;
+		    outline: none;
+		    position: absolute;
+		    top: 6px;
+		    left: 2px;
+		    border: none;
+		    height: 20px;
+		    line-height: 20px;
+		    color: #333;
+		    font-size: 12px;
+		    width: 248px;
+	        padding: 0 10px;
+	        z-index: 2;
+	        text-align: left;
+		}
+		/*area结束*/
+
+		/*marriage开始*/
+		.user-reg>div>div>form>div>dl.reg-marriage>dd>input{
+			margin-left: 40px;
+			float: left;
+			margin-top: 9px;
+		}
+		.user-reg>div>div>form>div>dl.reg-marriage>dd>input.marrw1{
+			margin-left: 0;
+		}
+		.user-reg>div>div>form>div>dl.reg-marriage>dd>label{
+			float: left;
+		}
+		/*marriage结束*/
+
+		/*免费注册开始*/
+		.user-reg>div>div>form>div>div{
+			margin-top: 15px;
+			position: relative;
+			width: 100%;
+		}
+		.user-reg>div>div>form>div>div>input{
+			width: 229px;
+			height: 48px;
+			border: 0;
+			cursor: pointer;
+			display: block;
+			margin:0 auto;
+			_display: inline;
+			background: url('images/top/sprite.png') -387px -188px;
+		}
+		.user-reg>div>div>form>div>div>input:hover{
+			background-position: -387px -246px;
+		}
+		/*免费注册结束*/
+
+		/*我是会员开始*/
+		.user-reg>div>div>form>div>p{
+			margin-top: 16px;
+			text-align: center;
+		}
+		.user-reg>div>div>form>div>p>a{
+			color: #929191;
+			text-decoration: underline;
+		}
+		.user-reg>div>div>form>div>p>a:hover{
+			text-decoration: none;
+		}
+		/*我是会员结束*/
+
+	/*user-reg结束*/
+

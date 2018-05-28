@@ -1,0 +1,452 @@
+body {
+	font: 400 16px/2 "Microsoft JhengHei", sans-serif;
+	color: #444;
+	overflow-y:scroll; 
+}
+.container {
+	max-width: 1170px;
+	margin: auto;
+}
+::selection {
+	background: #B9B9B9;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,
+textarea,p,blockquote,th,td,i { 
+    margin:0;
+    padding:0;
+}
+ol,ul,li {
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+    font-size: 0.875rem;
+    outline: none;
+}
+a:link,
+a:visited,
+a:active {
+	color:#535353; 
+}
+a:hover {
+	color: black;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+/*head*/
+header {
+	border-bottom: solid 1px #d6d6d6;
+}
+header .container {
+	min-height: 80px;
+	line-height: 80px;
+}
+header .myhead {
+	float: left;
+}
+header .myhead a {
+	margin: auto 0.625rem;
+	float: left;
+}
+header .myhead img {
+	width: 46px;
+	height: 46px;
+	vertical-align: middle;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+header .myhead img:hover {
+	-webkit-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+header .myhead div {
+	float: left;
+	font-size: 12px;
+	line-height: 28px;
+	text-align: center;
+	margin-top: 12px;
+	font-family: sans-serif;
+}
+header .myhead h2 {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 28px;
+	border-bottom: 1px solid gray;
+	padding: 0 5px;
+}
+header .myhead a {
+	position:relative;
+}
+header .myhead a:before {
+	content: "回到首页";
+	position: absolute;
+	bottom: 0;
+	right: -40px;
+	font-size: 12px;
+	color:white;
+	background: gray;
+	display: none;
+	line-height: 14px;
+	padding: 2px 5px;
+}
+header .myhead a:hover:before {
+	display: block;
+}
+header .headnav {
+	float: right;
+	padding-right:10px; 
+}
+.headnav .navshow li {
+	float: left;
+}
+.headnav .navshow li a {
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+.headnav .navshow li span {
+	padding: 0px 0.625rem;
+}
+.navhide {
+	line-height:1;
+	text-transform: capitalize;
+} 
+.navhide div {
+	border:solid 1px gray;
+	display: inline-block;
+	padding: 0 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 18px;
+	margin-top: 30px;
+	float: right;
+}
+.navhide .navhide-sub {
+	clear: both;
+	display: none;
+}
+.navhide div:hover{
+	background: #E9E9E9;
+}
+.navhide div:hover span {
+	background:black;
+}
+.navhide span {
+	width: 20px;
+	height: 1px;
+	background: gray;
+	display: block;
+	margin: 5px 0;
+}
+.navhide a{
+	display: block;
+	color: gray;
+	padding: 0.625rem 0.625rem 0.625rem 1.25rem;
+}
+.navhide li:nth-child(1) a {
+	border-top: solid 1px #E9E9E9;
+}
+.navhide a:hover {
+	background: #D9D9D9;
+	color: white;
+}
+
+
+/*section*/
+@-webkit-keyframes fadeIn {
+	0% {opacity: 0;filter: alpha(opacity=0);}
+	100%{opacity: 1;filter: alpha(opacity=100);}
+}
+@-moz-keyframes fadeIn {
+	0% {opacity: 0;filter: alpha(opacity=0);}
+	100%{opacity: 1;filter: alpha(opacity=100);}
+}
+@-o-keyframes fadeIn {
+	0% {opacity: 0;filter: alpha(opacity=0);}
+	100%{opacity: 1;filter: alpha(opacity=100);}
+}
+@-ms-keyframes fadeIn {
+	0% {opacity: 0;filter: alpha(opacity=0);}
+	100%{opacity: 1;filter: alpha(opacity=100);}
+}
+@keyframes fadeIn {
+	0% {opacity: 0;filter: alpha(opacity=0);}
+	100%{opacity: 1;filter: alpha(opacity=100);}
+}
+section {
+	-webkit-animation:fadeIn 3s;
+	-ms-animation:fadeIn 3s;
+	-o-animation:fadeIn 3s;
+	-moz-animation:fadeIn 3s;
+	animation:fadeIn 3s;
+}
+
+
+/*profile*/
+	/*table*/
+	section .container h2{
+		font-size: 16px;
+		font-weight: normal;
+		margin-top: 10px;
+	}
+	.profile-table {
+		max-width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 40px;
+		font-size: 12px;
+		border-collapse: collapse;
+		font-family: sans-serif;
+	}
+	.profile-table a {
+		color: green;
+	}
+	.profile-table a:hover {
+		color: red;
+	}
+	.profile-table dl {
+		margin-bottom: 10px;
+	}
+	.profile-table dt {
+		font-weight: bold;
+		color: black;
+	}
+	.job_introduce dd {
+		text-indent: 2em;
+	}
+	.profile-table>caption {
+		margin-bottom: 10px;
+		font-size: 1.25rem;
+		color: black;
+		font-weight: bold;
+		text-align: center;
+	}
+	.profile-table>caption>span {
+		font-size: 0.75rem;
+		color: gray;
+		margin-left: 5px;
+		font-weight: normal;
+	}
+	.profile-table td {
+		width: 20%;
+		height: 30px;
+		border:solid 1px gray;
+		background-color: white;
+		padding: 0.5rem;
+		line-height: 24px;
+		vertical-align: middle;
+		color:#535353; 
+	}
+	.profile-table td.advantage>p {
+		margin-bottom: 10px;
+	}
+	.profile-table tr>td:nth-child(1),.profile-table .resume_title {
+		background-color: #E9E9E9;
+		vertical-align: middle;
+		text-align: center;
+		font-weight: bold;
+		font-family: sans-serif;
+		color: black;
+	}
+	.profile-table tr>td:nth-child(2),.profile-table tr>td:nth-child(4) {
+		padding-left: 10px;
+	}
+		/*设置小字体开始*/
+		.profile-table td .small-font {
+			display: inline-block;
+			color: gray;
+			-webkit-transform:scale(0.8,0.8);
+			-ms-transform:scale(0.8,0.8);
+			-o-transform:scale(0.8,0.8);
+			-moz-transform:scale(0.8,0.8);
+			transform: scale(0.8,0.8);
+			margin-left: -6px;
+			font-family: 'Microsoft yahei';
+			position: relative;
+			top: 2px;
+		}
+		/*设置小字体结束*/
+	.profile-table .ability>span {
+		display: block;
+		padding-left: 20px;
+	}
+	.profile-table .narrow {
+		color: gray;
+		font-size: 0.75rem;
+		font-family:serif;
+		-webkit-transform:scale(0.95);
+		-ms-transform:scale(0.95);
+		transform:scale(0.95);
+	}
+
+/*about*/
+	.pro-tip {
+		font-size: 0.75rem;
+		text-decoration: underline;
+	}
+
+	/*skill*/
+	.skill {
+		background: white;
+		margin-bottom: 3.2rem;
+	}
+	.skill .skill-sub,
+	.gold .gold-sub {
+		margin: 2rem auto 0 auto;
+		max-width: 992px;
+	}
+	.skill .skill-sub>h3,
+	.gold .gold-sub>h3 {
+		font-size: 28px;
+		text-align: center;
+		font-weight: normal;
+	}
+	.skill .skill-sub>p,
+	.gold .gold-sub>p {
+		font-size: 0.9rem;
+		text-indent:1.5em;
+	}
+	.skill .skill-sub>ul>li{
+		margin:20px 0;
+		padding-left: 10px; 
+		position: relative;
+	}
+	.skill .skill-sub h4 {
+		background: #EAF6D0;
+		padding: 6px 0 6px 15px;
+		color: #6e9c0f;
+		border-left:3px solid #80bd01;
+		-webkit-transition: max-width 4s ease;
+		-o-transition: max-width 4s ease;
+		-ms-transition: max-width 4s ease;
+		-moz-transition: max-width 4s ease;
+		transition: max-width 4s ease;
+		max-width: 160px;
+	}
+	.skill .skill-sub>ul>li.skill-progress:nth-child(1) h4 {
+		max-width: 90%;
+	}
+	.skill .skill-sub>ul>li.skill-progress:nth-child(2) h4 {
+		max-width: 70%;
+	}
+	.skill .skill-sub>ul>li.skill-progress:nth-child(3) h4 {
+		max-width: 60%;
+	}
+	.skill .skill-sub>ul>li.skill-progress:nth-child(4) h4 {
+		max-width: 35%;
+	}
+	.skill .skill-sub>ul>li.skill-progress:nth-child(5) h4 {
+		max-width: 30%;
+	}
+	.skill-sub>ul ul {
+		display: none;
+		position:absolute;
+		top: 5%;
+		left: 20%;
+		z-index: 99;
+		background: rgba(255, 255, 255, 0.8);
+	    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	    border-radius: 4px;
+	    padding: 10px;
+	}
+	.skill .skill-sub h4:hover+ul,
+	.skill .skill-sub h4+ul:hover {
+		display: block;
+	} 
+	.skill-sub>ul ul li {
+		list-style-type:disc; 
+		margin-left: 15px;
+		font-size: 0.82rem;
+		line-height: 1.7;
+		font-family: sans-serif;
+	}
+	/*gold*/
+	.gold {
+		height: 600px;
+		background: #FAFAFA;
+	}
+	.gold>.container {
+		padding: 2.5rem 0;
+	}
+
+	/*chat*/
+	.chat {
+		padding: 
+	}
+	.formchat,
+	.comments-show {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem 15px 5rem 15px;
+		font-size: 0.9rem;
+	}
+	.formchat {
+		border-bottom:1px #A9A9A9 dashed; 
+	}
+	.formchat>p {
+		margin-bottom: 1.5rem;
+	}
+	.formchat h3 {
+		margin-bottom: 0.8rem;
+	}
+	.formchat textarea {
+		width: 100%;
+		height: 10rem;
+		resize: none;
+		text-indent: 1em;
+		outline: none;
+		font-size: 0.75rem;
+		padding: 8px 0;
+	}
+	.formchat .name,
+	.formchat .email {
+		padding: 8px 26px;
+		width: 60%;
+		display: block;
+		margin:1.5rem 0;
+		outline: none;
+		border: solid 1px #A9A9A9;
+	}
+	.formchat .name {
+		background: url('images/name.png') no-repeat 3px 9px,
+					url('images/star1.png') no-repeat 100% 0;
+	}
+	.formchat .email {
+		background: url('images/email.png') no-repeat 3px 9px,
+					url('images/star1.png') no-repeat 100% 0;
+	}
+	.formchat .choice input {
+		vertical-align: middle;
+	}
+	.formchat .choice label {
+		font-size: 14px;
+		margin-left: 5px;
+	}
+	.formchat .send {
+		display: block;
+		width: 100%;
+		border: none;
+		padding: 12px 0;
+		margin-top: 2.5rem;
+		background: #E9E9E9;
+		color: black;
+		outline: none;
+		cursor: pointer;
+		font-size: 1.25rem;
+		opacity: 0.6;
+		filter: alpha(opacity=60);
+	}
+	.formchat .send:hover {
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}

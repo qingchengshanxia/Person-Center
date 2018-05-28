@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5前端性能优化</title>
+	<style>
+		body{
+			background: #F4F6F8;
+		}
+		article{
+			width: 1120px;
+			margin:auto;
+			background: white;
+		}
+		li{
+			line-height: 1.6em;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<h2>移动H5前端性能优化注意点</h2>
+		<ol>
+			<li>最多三秒钟渲染完成单屏或者使用Loading</li>
+			<li>基于3G/4G移动网络下，每屏幕资源不超过1024KB</li>
+		</ol>
+		<ul>
+			<li>
+				<h3>加载优化</h3>
+				<ul>
+					<li>合并CSS、JavaScript</li>
+					<li>合并小图片、使用雪碧图</li>
+					<li>缓存一切可以缓存的资源，部分资源css、js使用 src="abc.css?cacheVersion=1" 来控制版本</li>
+					<li>使用长Cache</li>
+					<li>压缩HTML、CSS、JS</li>
+					<li>启用 GZip</li>
+					<li>使用首屏加载</li>
+					<li>使用按需加载</li>
+					<li>使用滚屏加载</li>
+					<li>增加进度指示器</li>
+					<li>减少 Cookie</li>
+					<li>避免重定向</li>
+					<li>异步加载第三方资源</li>
+				</ul>
+			</li>
+			<li>
+				<h3>CSS优化</h3>
+				<ul>
+					<li>CSS写在头部，JS写到尾部或者异步</li>
+					<li>避免图片和 iFrame 等的SRC为空</li>
+					<li>尽量避免重设图片大小</li>
+					<li>图片尽量避免使用 DataURL</li>
+					<li>尽量避免在HTML标签中写Style</li>
+					<li>避免CSS表达式</li>
+					<li>移除空的CSS规则</li>
+					<li>正确使用Display的属性</li>
+					<li>不滥用 Float</li>
+					<li>不滥用Web字体</li>
+					<li>不声明过多的 Font-size</li>
+					<li>值为0时候不需要任何单位</li>
+					<li>标准化各种浏览器的前缀</li>
+					<li>避免让选择符看起来像正则表达式</li>
+				</ul>
+			</li>
+			<li>
+				<h3>图片优化</h3>
+				<ul>
+					<li>使用 CSS3、SVG、IconFont 代替图片</li>
+					<li>使用Srcset</li>
+					<li>WebP优于JPG</li>
+					<li>PNG8优于GIF</li>
+					<li>首次加载不大于1024KB单页</li>
+					<li>图片不宽于640</li>
+				</ul>
+			</li>
+			<li>
+				<h3>脚本优化</h3>
+				<ul>
+					<li>减少重绘</li>
+					<li>缓存Dom选择与计算</li>
+					<li>尽量使用事件代理，避免批量绑定事件</li>
+					<li>尽量使用ID选择器</li>
+					<li>使用touch代理click</li>
+				</ul>
+			</li>
+		</ul>
+	</article>
+</body>
+</html>

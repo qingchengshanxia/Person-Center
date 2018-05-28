@@ -1,0 +1,80 @@
+
+@media screen and (max-width:768px){
+	.navhide {
+		display: block;
+	}
+	header {
+		border-bottom: 0;
+	}
+	.navshow {
+		display: none;
+	}
+	section .container h2 {
+		margin-left: 20px;
+	}
+	.skill .skill-sub>h3,
+	.gold .gold-sub>h3 {
+		font-size: 18px;
+	}
+	.skill .skill-sub>p,
+	.gold .gold-sub>p {
+		padding: 0 1.2rem;
+		text-align: left;
+	}
+}
+@media screen and (min-width:768px){
+	.navhide {
+		display: none;
+	}
+	.navshow {
+		display: block;
+	}
+	section .container h2 {
+		margin-left: 30px;
+	}
+	.skill .skill-sub>h3,
+	.gold .gold-sub>h3 {
+		font-size: 21px;
+	}
+	.skill .skill-sub>p,
+	.gold .gold-sub>p {
+		padding: 0 2rem;
+		text-align: left;
+	}
+}
+@media screen and (min-width:992px){
+	.navhide {
+		display: none;
+	}
+	.navshow {
+		display: block;
+	}
+	section .container h2 {
+		margin-left: 40px;
+	}
+	.skill .skill-sub>h3,
+	.gold .gold-sub>h3 {
+		font-size: 24px;
+	}
+	.skill .skill-sub>p,
+	.gold .gold-sub>p {
+		padding: 0 3rem;
+		text-align: center;
+	}
+}
+@media screen and (min-width:1200px){
+	.navhide {
+		display: none;
+	}
+	.navshow {
+		display: block;
+	}
+	section .container h2 {
+		margin-left: 40px;
+	}
+	.skill .skill-sub>p,
+	.gold .gold-sub>p {
+		padding: 0 4rem;
+		text-align: center;
+	}
+}

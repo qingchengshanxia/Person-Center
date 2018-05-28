@@ -1,0 +1,444 @@
+/*section开始*/
+	.middle_section{
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		position: absolute;
+		top: 80px;
+		left: 0;
+		background: rgba(32,125,89,0.4);
+		padding-bottom: 60px;
+	}
+
+		/*introduce介绍开始*/
+		aside.introduce{
+			width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			position: fixed;
+			top: 300px;
+			left:1450px;
+		}
+		aside.introduce>ul>li{
+			display: block;
+			width: 160px;
+			height: 40px;
+			margin-top: 20px;
+			text-align: center;
+		}
+		aside.introduce>ul>li>a{
+			width: 160px;
+			height: 40px;
+			line-height: 40px;
+			display: block;
+			border: solid 1px rgba(360,360,360,0.8);
+			border-radius: 20px;
+			color: white;
+			background: rgba(0,255,0,.3);
+			-webkit-transition: background 0.3s ease;
+			-moz-transition: background 0.3s ease;
+			-o-transition: background 0.3s ease;
+			transition: background 0.3s ease;
+		}
+		aside.introduce>ul>li>a:hover{
+			color:orange;
+			background: rgba(360,360,360,0.9);
+		}
+		/*introduce介绍结束*/
+
+		.middle_section .Mymessage,.Mydemo,.Myjob,.Yourcall{
+			width: 960px;
+			height: 740px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 40px;
+			padding-bottom: 30px;
+			background: #eee;
+		}
+
+			/*Mymessage开始*/
+			.middle_section .Mymessage>ul{
+				width: 100%;
+				height: 100%;
+				padding-bottom: 30px;
+				overflow: hidden;
+			}
+			.middle_section .Mymessage>ul>li{
+				float: left;
+				background: white;
+				height: 365px;
+			}
+			.middle_section .Mymessage>ul>li:nth-child(1){
+				width: 960px;
+				position: relative;
+				top:-420px;
+				-webkit-transition: all 1s linear 0.5s; 
+				-moz-transition: all 1s linear 0.5s; 
+				-o-transition: all 1s linear 0.5s; 
+				-ms-transition: all 1s linear 0.5s; 
+				transition: all 1s linear 0.5s; 
+			}
+			.middle_section .Mymessage>ul>li:nth-child(2),.middle_section .Mymessage>ul>li:nth-child(3){
+				margin-top: 40px;
+				position: relative;
+				-webkit-transition: all 1s linear 0.8s;
+				-moz-transition: all 1s linear 0.8s;
+				-o-transition: all 1s linear 0.8s;
+				-ms-transition: all 1s linear 0.8s;
+				transition: all 1s linear 0.8s;
+			}
+			.middle_section .Mymessage>ul>li:nth-child(2){
+				width: 340px;
+				background:white url('../images/profile_bg2.jpg') no-repeat 32px 0px;
+				left: -360px;
+			}
+			.middle_section .Mymessage>ul>li:nth-child(3){
+				width: 585px;
+				right: -605px;
+			}
+			.middle_section .Mymessage>ul>li:nth-child(3){
+				margin-left: 35px;
+			}
+			.middle_section .Mymessage>ul>li.cb0{
+				top: 0;
+			}
+			.middle_section .Mymessage>ul>li.cb1{
+				left: 0;
+			}
+			.middle_section .Mymessage>ul>li.cb2{
+				right: 0;
+			}
+
+				/*背景class名开始*/
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>li>p{
+					position:relative;
+					top: 360px;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>li:nth-child(1)>p{
+					-webkit-transition: top 0.5s linear 1.8s;
+					-moz-transition:top 0.5s linear 1.8s;
+					-o-transition:top 0.5s linear 1.8s;
+					-ms-transition:top 0.5s linear 1.8s;
+					transition: top 0.5s linear 1.8s;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>li:nth-child(2)>p{
+					-webkit-transition: top 0.5s linear 2.2s;
+					-moz-transition:top 0.5s linear 2.2s;
+					-o-transition:top 0.5s linear 2.2s;
+					-ms-transition:top 0.5s linear 2.2s;
+					transition: top 0.5s linear 2.2s;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>li:nth-child(3)>p{
+					-webkit-transition: top 0.5s linear 2.6s;
+					-moz-transition:top 0.5s linear 2.6s;
+					-o-transition:top 0.5s linear 2.6s;
+					-ms-transition:top 0.5s linear 2.6s;
+					transition: top 0.5s linear 2.6s;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>li:nth-child(4)>p{
+					-webkit-transition: top 0.5s linear 3.0s;
+					-moz-transition:top 0.5s linear 3.0s;
+					-o-transition:top 0.5s linear 3.0s;
+					-ms-transition:top 0.5s linear 3.0s;
+					transition: top 0.5s linear 3.0s;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>.bg_p0>p,
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>.bg_p1>p,
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>.bg_p2>p,
+				.middle_section .Mymessage>ul>li:nth-child(2)>ul>.bg_p3>p{
+					top: 0;
+				}
+				/*背景class名结束*/
+
+
+				/*个人资料开始*/
+				.middle_section .Mymessage>ul>li:nth-child(1){
+					/*background: gray url('../images/profile_bg.jpg') no-repeat 0 0;*/
+					background: #E0E0E0;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(1)>h3{
+					display: inline-block;
+					width: 100%;
+					height: 90px;
+					line-height:90px;
+					background: rgba(360,360,360,0.6);
+					text-align: center;
+					margin-top: 135px;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(1)>h3>a{
+					color:orange;
+					cursor: pointer;
+					font-size: 28px;
+					padding: 5px;
+					box-shadow: 0 0 50px red;
+				}
+				.middle_section .Mymessage>ul>li:nth-child(1)>h3>a:hover{
+					background: rgba(255,165,0,0.3);
+				}
+				/*个人资料结束*/
+
+				/*背景开始*/
+				.middle_section .Mymessage>ul>li.personal_background{
+					position: relative;
+					overflow: hidden;
+				}
+				.middle_section .Mymessage>ul>li.personal_background:after{
+					content: "";
+					width: 2px;
+					height: 280px;
+					display: block;
+					background-color: orange;
+					position: absolute;
+					top: 40px;
+					left: 28px;
+					z-index: 8;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>h3{
+					display: block;
+					width: 36px;
+					height: 36px;
+					line-height: 36px;
+					text-align: center;
+					font-weight: bold;
+					font-size: 14px;
+					-webkit-border-radius: 18px;
+					-o-border-radius: 18px;
+					-moz-border-radius: 18px;
+					-ms-border-radius: 18px;
+					border-radius: 18px;
+					background-color: orange;
+					color:yellow;
+					margin-left: 10px;
+					margin-top: 5px;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul{
+					margin-left: 5px;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul>li{
+					position: relative;
+					z-index: 9;
+					display: block;
+					width: 100%;
+					height: 54px;
+					margin-top: 22px;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul>li:nth-child(3){
+					margin-top: 30px;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul>li>span{
+					float: left;
+					display: inline-block;
+					font-size: 12px;
+					color: white;
+					width: 50px;
+					height: 50px;
+					line-height: 50px;
+					text-align: center;
+					background-color: orange;
+					-webkit-border-radius: 25px;
+					-o-border-radius: 25px;
+					-moz-border-radius: 25px;
+					-ms-border-radius: 25px;
+					border-radius: 25px;
+					cursor: default;
+					transition: background 0.3s ease;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul>li>span:hover{
+					background-color:yellow; 
+					color:orange;
+				}
+				.middle_section .Mymessage>ul>li.personal_background>ul>li>p{
+					float: right;
+					width: 270px;
+					text-indent: 2em;
+					font-size: 12px;
+					margin-top: -5px;
+				}
+				/*背景结束*/
+
+				/*技能进度条开始*/
+				.middle_section .Mymessage>ul>li.skills_progress{
+					overflow: hidden;
+					position: relative;
+				}
+				.middle_section .Mymessage>ul>li.skills_progress>h3{
+					width: 50%;
+					float: left;
+					text-align: center;
+				}
+				.middle_section .Mymessage>ul>li.skills_progress>h3>a{
+					display: block;
+					width: 100%;
+					height: 40px;
+					line-height: 40px;
+					font-size: 24px;
+					color: gray;
+					text-align: center;
+					outline: none;
+				}
+				.middle_section .Mymessage>ul>li.skills_progress ul{
+					display: block;
+					width: 600px;
+					height: 370px;
+					position: absolute;
+					top: 40px;
+					left: 0;
+					background-color: white;
+				}
+
+					/*进度条制作开始*/
+					.middle_section .Mymessage>ul>li.skills_progress ul>li{
+						width: 90%;
+						background-color:rgba(255,165,0,0.4);
+						margin-top: 10px;
+						margin-left: 10px;
+					}
+					.middle_section .Mymessage>ul>li.skills_progress ul>li>span{
+						display: block;
+						width: 70px;
+						height: 15px;
+						line-height: 15px;
+						background-color:#FFA500;
+						border-top-right-radius:10px; 
+						border-bottom-right-radius:10px; 
+						font-size: 12px;
+						color:white;
+						font-family: Georgia,Serif;;
+						padding-left: 5px;
+						float: left;
+						overflow: hidden;
+					}
+					.middle_section .Mymessage>ul>li.skills_progress ul>li>i{
+						float: right;
+						margin-right: -30px;
+						margin-top: -2px;
+						color: green;
+						font-family: "Microsoft yahei";
+						font-size: 12px;
+						font-style: normal;
+					}
+					.middle_section .Mymessage>ul>li.skills_progress ul.progress_one>li{
+						height: 16px;
+					}
+					.middle_section .Mymessage>ul>li.skills_progress ul.progress_two>li{
+						margin-top: 23px;
+						height: 20px;
+					}
+					.middle_section .Mymessage>ul>li.skills_progress ul.progress_two>li>span{
+						height: 20px;
+						line-height: 20px;
+					}
+					/*进度条制作结束*/
+				/*技能进度条结束*/
+
+		/*Mymessage结束*/
+
+
+		/*Yourcall开始*/
+		.Yourcall>header>h2{
+			height: 60px;
+			line-height: 100px;
+			font-size: 32px;
+			margin-left: 60px;
+			color: black;
+			font-weight: bold;
+		}	
+		.Yourcall>form{
+			margin-left: 60px;
+		}
+		.Yourcall>form>input,.Yourcall>form>textarea{
+			background-color:white;
+			outline: none;
+			border:none;
+			text-indent: 1em;
+			font-size: 13px;
+		}
+		.Yourcall>form>input{
+			display: block;
+			width: 340px;
+			height: 60px;
+			line-height: 60px;
+			float: left;
+			margin-top: 20px;
+		}
+		.Yourcall>form>input.call_method{
+			width: 253px;
+			margin-left: 20px;
+		}
+		.Yourcall>form>input:nth-child(1){
+			margin-left: 0;
+		}
+		.Yourcall>form>input:nth-child(4){
+			width: 800px;
+		}
+		.Yourcall>form>input:nth-of-type(5){
+			width: 200px;
+			color: white;
+			background-color: rgba(0,0,0,0.7);
+			cursor: pointer;
+			-webkit-text-shadow: 0px 0px 10px white;
+			-o-text-shadow: 0px 0px 10px white;
+			-moz-text-shadow: 0px 0px 10px white;
+			-ms-text-shadow: 0px 0px 10px white;
+			text-shadow: 0px 0px 10px white;
+		}
+		.Yourcall>form>input:nth-of-type(5):hover{
+			background-color: rgba(0,0,0,0.6);
+		}
+		.Yourcall>form>textarea{
+			float: left;
+			width: 800px;
+			height: 400px;
+			margin-top: 20px;
+			padding-top: 5px;
+			resize: none;
+		}
+		/*Yourcall结束*/
+
+
+		/*回到顶部开始*/
+		.to_top{
+			display: block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			-webkit-border-radius: 25px;
+			-o-border-radius: 25px;
+			-moz-border-radius: 25px;
+			-ms-border-radius: 25px;
+			border-radius: 25px;
+			background-color: rgba(255,165,0,0.6);
+			position: fixed;
+			bottom: 40px;
+			right: 40px;
+			z-index: 999999;
+			cursor: pointer;
+		}
+		aside.to_top:hover{
+			background-color:orange;
+		}
+		aside.to_top:hover .icon-to-top:before{
+			color: white;
+		}
+		/*回到顶部结束*/
+
+/*footer开始*/
+	.lastfooter{
+		display: block;
+		width: 100%;
+		background: white;
+		position: absolute;
+		top: 3340px;
+		left: 0;
+		margin-top: 20px;
+		padding-top: 20px;
+		overflow: hidden;
+	}
+	.lastfooter>div.youyan{
+		margin-left: auto;
+		margin-right: auto;
+		width: 98%;
+	}
+/*footer结束*/
+
