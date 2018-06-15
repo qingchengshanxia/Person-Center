@@ -20,6 +20,27 @@ function createEle(ele,content,attrobj){
 }
 
 
+//动态引入js文件
+function loadFun(url, callback){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    if (script.readyState){
+        script.onreadystatechange = function(){
+            if (script.readyState == "loaded" || script.readyState == "complete"){
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        script.onload = function(){
+            callback();
+        };
+    }
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+
 //监听器兼容
 var addEvent = function(ele, type, callback){
     if(ele.addEventListener){
@@ -155,63 +176,63 @@ function getCurTime(){
 
 
 
-// 封装ajax
-function convertData(data){
-    if( typeof data === 'object' ){
-        var convertResult = "" ;
-        for(var c in data){
-          convertResult += c + "=" + data[c] + "&";
+    // 封装ajax
+    function convertData(data){
+        if( typeof data === 'object' ){
+            var convertResult = "" ;
+            for(var c in data){
+              convertResult += c + "=" + data[c] + "&";
+            }
+            convertResult = convertResult.substring(0,convertResult.length-1);
+            return convertResult;
+        }else{
+            return data;
         }
-        convertResult = convertResult.substring(0,convertResult.length-1);
-        return convertResult;
-    }else{
-        return data;
     }
-}
-function createxmlHttpRequest() {
-    if (window.ActiveXObject) {
-        return new ActiveXObject("Microsoft.XMLHTTP");
-    } else if (window.XMLHttpRequest) {
-        return new XMLHttpRequest();
+    function createxmlHttpRequest() {
+        if (window.ActiveXObject) {
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        } else if (window.XMLHttpRequest) {
+            return new XMLHttpRequest();
+        }
     }
-}
-function ajax(){
-  var ajaxData = {
-        type:arguments[0].type || "GET",
-        url:arguments[0].url || "",
-        async:arguments[0].async || "true",
-        data:arguments[0].data || null,
-        dataType:arguments[0].dataType || "text",
-        contentType:arguments[0].contentType || "application/x-www-form-urlencoded",
-        beforeSend:arguments[0].beforeSend || function(){},
-        success:arguments[0].success || function(){},
-        error:arguments[0].error || function(){}
-      }
+    function ajax(){
+      var ajaxData = {
+            type:arguments[0].type || "GET",
+            url:arguments[0].url || "",
+            async:arguments[0].async || "true",
+            data:arguments[0].data || null,
+            dataType:arguments[0].dataType || "text",
+            contentType:arguments[0].contentType || "application/x-www-form-urlencoded",
+            beforeSend:arguments[0].beforeSend || function(){},
+            success:arguments[0].success || function(){},
+            error:arguments[0].error || function(){}
+          }
 
-    ajaxData.beforeSend()
+        ajaxData.beforeSend()
 
-    var xhr = createxmlHttpRequest();
+        var xhr = createxmlHttpRequest();
 
-    xhr.responseType=ajaxData.dataType;
+        xhr.responseType=ajaxData.dataType;
 
-    if(ajaxData.type == 'get'){
-        ajaxData.url += '?' + convertData(ajaxData.data);
-    }
+        if(ajaxData.type == 'get'){
+            ajaxData.url += '?' + convertData(ajaxData.data);
+        }
 
-    xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);
-    xhr.setRequestHeader("Content-Type",ajaxData.contentType);
-    xhr.send(convertData(ajaxData.data));
+        xhr.open(ajaxData.type,ajaxData.url,ajaxData.async);
+        xhr.setRequestHeader("Content-Type",ajaxData.contentType);
+        xhr.send(convertData(ajaxData.data));
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            if(xhr.status == 200){
-                ajaxData.success(xhr.response)
-            }else{
-                ajaxData.error()
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if(xhr.status == 200){
+                    ajaxData.success(xhr.response)
+                }else{
+                    ajaxData.error()
+                }
             }
         }
     }
-}
 
 
 
@@ -257,4 +278,125 @@ function ajax(){
                 //显示
             }
         }, false);
+    }
+
+
+    //自动生成数字混合字母的验证码;
+    //
+    //具备功能：
+    //1，随机5-7位的数字字母组合；
+    //2，随机字体大小；
+    //3，随机字体颜色；
+    //4,随机字体是否倾斜；
+    //
+    //
+    function createVerifyCode(){
+        let nums_letter_arr=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']; //所有的大小写字母
+        for (let i = 0; i < 10; i++) {
+          nums_letter_arr.push(i);
+        };
+
+        let alllength=nums_letter_arr.length; //总共有多少位数字加字母；
+        let nums = parseInt(Math.random()*10);  // 取11~14位；
+        //当在0~2.5区间时，取11位，在2.5~5.0区间取12，取11位，在5.0~7.5区间取13,否则取14；
+        if(nums<=2.5){
+          nums=11;
+        }else if(nums>2.5&&nums<=5.0){
+          nums=12;
+        }else if(nums>5.0&&nums<=7.5){
+          nums=13;
+        }else{
+          nums=14;
+        }
+
+        let result=[]; //最后随机生成的11~14位的数字和字母结果；
+        let randomnum = '';
+        for (let i = 0; i < nums; i++) {
+          randomnum = parseInt(Math.random()*nums_letter_arr.length);
+          result.push(nums_letter_arr[randomnum]);
+        };
+
+        //生成一个对象数组,如果第二个参数为true则表示取取用当前字符，否则舍弃；最后得到boolean为true的5~7位的结果；
+        let numnewarr=[];
+        for (let i = 0; i < result.length; i++) {
+          numnewarr.push({
+            id:i,
+            val:result[i],
+            boolean:Math.random()*10>5?true:false
+          })
+        };
+
+
+        //如果数组numnewarr中，boolean值为true的个数少于5个，则随机补足到7个,如果大于7个则随机减少到7个；
+        let boolcount=0;  //boolean值为true的个数
+        let boolean_true_arr=[];  //boolean为true对应的所有结果
+        let boolean_false_arr=[];  //boolean为false对应的所有结果
+        for (let i = 0; i < numnewarr.length; i++) {
+          if(numnewarr[i].boolean){
+            boolcount++;
+            boolean_true_arr.push(numnewarr[i]);
+          }else{
+            boolean_false_arr.push(numnewarr[i]);
+          }
+        };
+
+        if(boolcount<5){
+          let five_down_id=[];  //boolcount小于5时，随机从boolean_false_arr获取（5-boolcount）个id；
+          let f_curcount='';  //当前boolean_false_arr总个数中的随机数;
+
+          for (let i = 0; i < 5-boolcount; i++) {
+              let f_curcount=parseInt(Math.random()*(boolean_false_arr.length));
+              five_down_id.push(boolean_false_arr[f_curcount].id);
+          };
+
+          for (let i = 0; i < numnewarr.length; i++) {
+            for (let j = 0; j < five_down_id.length; j++) {
+              if(five_down_id[j]==numnewarr[i].id){
+                numnewarr[i].boolean=true;
+              }
+            };
+          };
+        }else if(boolcount>=7){
+          let seven_up_id=[]; //boolcount大于等于7时，随机从boolean_true_arr获取（boolcount-7）个id；
+          let t_curcount='';  //当前boolean_true_arr总个数中的随机数;
+
+          for (let i = 0; i < boolcount-7; i++) {
+              let t_curcount=parseInt(Math.random()*(boolean_true_arr.length));
+              seven_up_id.push(boolean_true_arr[t_curcount].id);
+          };
+
+          for (let i = 0; i < numnewarr.length; i++) {
+            for (let j = 0; j < seven_up_id.length; j++) {
+              if(seven_up_id[j]==numnewarr[i].id){
+                numnewarr[i].boolean=false;
+              }
+            };
+          };
+        }
+
+        //添加随机字体大小尺寸;
+        let sizearr=['12px','13px','14px','15px','16px'];
+        for (let i = 0; i < numnewarr.length; i++) {
+          numnewarr[i].fontsize=sizearr[parseInt(Math.random()*(sizearr.length))];
+        };
+
+        //添加随机字体颜色值;
+        let colorarr=['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'teal'];
+        for (let i = 0; i < numnewarr.length; i++) {
+          numnewarr[i].color=colorarr[parseInt(Math.random()*(colorarr.length))];
+        };
+
+        //添加字体是否倾斜
+        let isiarr=['normal','italic'];
+        for (let i = 0; i < numnewarr.length; i++) {
+          numnewarr[i].italics=isiarr[parseInt(Math.random()*(isiarr.length))];
+        };
+
+        //添加字体是否加粗
+        let isweightarr=['normal','bold'];
+        for (let i = 0; i < numnewarr.length; i++) {
+          numnewarr[i].weight=isweightarr[parseInt(Math.random()*(isweightarr.length))];
+        };
+
+      return numnewarr;
     }
